@@ -4,8 +4,8 @@ from ..core.state import AgentState
 from ..core.message import Message, MessageRole
 from ..controller.llm import LLMController
 from ..tools.decompose import DecomposeTool
-from ..tools.search.kg import KGSearchTool
-from ..tools.search.vector import VectorSearchTool
+from ..tools.search.search_kg import KGSearchTool
+from ..tools.search.search_vector import VectorSearchTool
 from ..tools.generate import GenerateAnswerTool
 import json
 

@@ -1,8 +1,8 @@
 from typing import Dict, Type, Optional
 from ...tools.base_tool import BaseTool
 from ...tools.decompose import DecomposeTool
-from ...tools.search.kg import KGSearchTool
-from ...tools.search.vector import VectorSearchTool
+from ...tools.search.search_kg import KGSearchTool
+from ...tools.search.search_vector import VectorSearchTool
 from ...tools.generate import GenerateAnswerTool
 
 class ToolRegistry:

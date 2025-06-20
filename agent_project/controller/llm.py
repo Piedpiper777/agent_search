@@ -160,8 +160,8 @@ class LLMController(BaseController):
 # 使用示例
 if __name__ == "__main__":
     from ..tools.decompose import DecomposeTool
-    from ..tools.search.kg import KGSearchTool
-    from ..tools.search.vector import VectorSearchTool
+    from ..tools.search.search_kg import KGSearchTool
+    from ..tools.search.search_vector import VectorSearchTool
     from ..tools.generate import GenerateAnswerTool
     
     # 创建控制器实例

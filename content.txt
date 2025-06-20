@@ -1,64 +1,78 @@
-agent_project/
-├── README.md                     # 项目说明文档
-├── requirements.txt              # 项目依赖文件
-├── agent_project/
-│   ├── __init__.py               # 项目初始化文件
-│   ├── main.py                   # 项目入口文件
-│   ├── core/                      # 新增：核心组件
-│   │   ├── __init__.py
-│   │   ├── state.py              # 原 agent_state.py
-│   │   ├── message.py            # 从state中分离出message定义
-│   │   └── types.py              # 共用类型定义
-│   ├── tools/
-│   │   ├── __init__.py           # 工具模块初始化文件
-│   │   ├── base.py          # 新增：定义工具基类和接口
-│   │   ├── decompose.py     # 简化query
-│   │   ├── search/         # 新增：搜索相关工具集合
-│   │   │   ├── __init__.py
-│   │   │   ├── kg.py
-│   │   │   ├── vector.py
-│   │   │   └── base.py     # 搜索工具通用接口
-│   │   └── generate.py      # 答案生成工具实现
-│   ├── controller/
-│   │   ├── __init__.py           # 控制器模块初始化文件
-│   │   ├── base.py        # 新增：控制器基类
-│   │   ├── llm.py         # 新增：LLM决策实现
-│   │   ├── rule.py        # 新增：规则决策实现
-│   │   └── error.py       # 原 error_handler.py
-│   ├── graph/
-│   │   ├── __init__.py           # 图模块初始化文件
-│   │   ├── graph_builder.py      # LangGraph构建逻辑
-│   ├── utils/
-│   │   ├── __init__.py           # 工具模块初始化文件
-│   │   ├── llm_client.py         # LLM客户端封装
-│   │   ├── validation.py         # 工具输入验证逻辑
-│   ├── config/
-│   │   ├── __init__.py           # 配置模块初始化文件
-│   │   ├── registry/           # 新增：注册表分类
-│   │   │   ├── __init__.py
-│   │   │   ├── tools.py       # 工具注册
-│   │   │   └── validators.py   # 验证器注册
-│   │   ├── default.py         # 默认配置
-│   │   └── custom.py          # 自定义配置
-├── examples/                # 新增：使用示例
-│   ├── simple_query.py
-│   └── complex_workflow.py
-├── docs/                   # 新增：文档
-│   ├── api/
-│   ├── guides/
-│   └── tutorials/
-└── scripts/               # 新增：实用脚本
-    ├── setup.sh
-    └── test.sh
-└── tests/
-    ├── __init__.py
-    ├── unit/                   # 单元测试
-    │   ├── __init__.py
-    │   ├── test_core/
-    │   ├── test_tools/
-    │   └── test_controller/
-    └── integration/           # 集成测试
-        ├── __init__.py
-        ├── test_workflows/
-        └── test_e2e/
-
++---agent_project
+|   |   main.py
+|   |   __init__.py
+|   +---config
+|   |   |   custom.py
+|   |   |   default.py
+|   |   |   optimization_config.py
+|   |   |   vector_db.py
+|   |   |   __init__.py
+|   |   +---registry
+|   |   |   |   tools.py
+|   |   |   |   validators.py
+|   |   |   |   __init__.py
+|   +---controller
+|   |       base_controller.py
+|   |       error.py
+|   |       hybrid_controller.py
+|   |       llm.py
+|   |       rule.py
+|   |       state_converter.py
+|   |       __init__.py
+|   |       
+|   +---core
+|   |   |   custom_types.py
+|   |   |   message.py
+|   |   |   state.py
+|   |   |   __init__.py
+|   +---graph
+|   |       graph_builder.py
+|   |       __init__.py
+|   +---intelligence
+|   |       context_analyzer.py
+|   |       decision_explainer.py
+|   |       llm_decision_maker.py
+|   |       pareto_selector.py
+|   |       __init__.py 
+|   +---learning
+|   |       experience_buffer.py
+|   |       exploration_strategy.py
+|   |       multi_objective_rl.py
+|   |       weight_learner.py
+|   |       __init__.py
+|   +---monitoring
+|   |       episode_tracker.py
+|   |       learning_analytics.py
+|   |       metrics_collector.py
+|   |       performance_monitor.py
+|   |       __init__.py
+|   +---optimization
+|   |       constraints.py
+|   |       multi_objective_dp.py
+|   |       pareto_solver.py
+|   |       reward_functions.py
+|   |       state_transition.py
+|   |       __init__.py   
+|   +---tests
+|   |   |   __init__.py
+|   |   +---test_controller
+|   |   +---test_intelligence
+|   |   +---test_intergration
+|   |   +---test_learning
+|   |   +---test_optimization
+|   |   \---test_tools
+|   +---tools
+|   |   |   base_tool.py
+|   |   |   decompose.py
+|   |   |   generate.py
+|   |   |   __init__.py
+|   |   +---search
+|   |   |   |   base_search.py
+|   |   |   |   search_kg.py
+|   |   |   |   search_vector.py
+|   |   |   |   __init__.py
+|   +---utils
+|   |   |   llm_client.py
+|   |   |   math_utils.py
+|   |   |   validation.py
+|   |   |   __init__.py
